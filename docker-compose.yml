@@ -1,6 +1,6 @@
 services:
-  astrowind:
+  MedSyntra:
     build: .
-    container_name: astrowind
+    container_name: MedSyntra
     ports:
       - 8080:8080

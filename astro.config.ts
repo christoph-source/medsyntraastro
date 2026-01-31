@@ -11,7 +11,7 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
-import astrowind from './vendor/integration';
+import MedSyntra from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
@@ -66,7 +66,7 @@ export default defineConfig({
       Logger: 1,
     }),
 
-    astrowind({
+    MedSyntra({
       config: './src/config.yaml',
     }),
   ],
