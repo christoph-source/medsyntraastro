@@ -1,0 +1,223 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'For Contributors | MedSyntra',
+  description: 'Enable governed research access and participate in monetization—while retaining ownership and control.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Intro -->
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">For data contributors</h1>
+
+    <p class="mt-6 max-w-3xl text-lg text-muted-foreground">
+      MedSyntra helps hospitals and clinics convert imaging archives into governed, research-ready data assets—while you
+      retain ownership, control access, and participate in monetization under agreed terms.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-primary-foreground" href="/contact">
+        Talk to us about contributing
+      </a>
+      <a class="inline-flex items-center justify-center rounded-xl border px-5 py-3" href="/platform">
+        Explore the platform
+      </a>
+    </div>
+  </section>
+
+  <!-- Why contribute -->
+
+  <Features
+    tagline="Why contribute"
+    title="Monetize responsibly, without giving up control"
+    subtitle="Contributing institutions stay in control. Access is governed. Participation is transparent."
+    items={[
+      {
+        title: 'You retain ownership',
+        description:
+          'Your institution remains the data owner. MedSyntra enables governed research access without transferring ownership.',
+        icon: 'tabler:building-hospital',
+      },
+      {
+        title: 'Governance-first access',
+        description:
+          'Access is policy-driven and auditable—aligned to approvals, contracts, and responsible research use.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Privacy by design',
+        description:
+          'De-identification is designed for research workflows, including metadata and pixel-level processing.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Revenue participation',
+        description:
+          'Contributors participate in monetization under agreed commercial terms, aligned to measurable usage and access.',
+        icon: 'tabler:coins',
+      },
+      {
+        title: 'Low operational overhead',
+        description:
+          'We manage ingestion, processing, indexing, cohort creation, and secure delivery—your team stays focused on care.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Research impact',
+        description:
+          'Enable better, more representative research and AI innovation while protecting trust and sovereignty.',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+  />
+
+  <!-- How monetization works -->
+
+  <Content
+    id="monetization"
+    isReversed
+    tagline="Monetization"
+    title="A contributor-friendly model"
+    items={[
+      {
+        title: 'Agreed terms',
+        description:
+          'Commercial terms are agreed up-front per contributor and use case—transparent and measurable.',
+      },
+      {
+        title: 'Usage-based participation',
+        description:
+          'Contributor participation can be aligned to cohort usage, scope, and delivery models (project-defined).',
+      },
+      {
+        title: 'Reporting and visibility',
+        description:
+          'Governed access enables clear reporting and auditability so contributors understand how data is used.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1580281657527-47f249e8f8d1?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Hospital partnership and governance',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Aligned incentives</h3>
+      We design contribution models that protect institutions, respect governance, and enable fair participation—without
+      exposing contributors to operational burden.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Onboarding steps -->
+
+  <Steps
+    id="onboarding"
+    title="Contributor onboarding"
+    items={[
+      {
+        title: '1) Intro and eligibility',
+        description:
+          'We review your data sources, modalities, and constraints (residency, governance requirements, and scope).',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '2) Governance + commercial terms',
+        description:
+          'We define access policies, approvals, permitted use, and contribution terms before any processing begins.',
+        icon: 'tabler:contract',
+      },
+      {
+        title: '3) Secure connection & ingestion',
+        description:
+          'We establish secure ingestion flows that minimize impact on your clinical environment.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: '4) De-identification & indexing',
+        description:
+          'We process, de-identify, and index the archive to enable cohort building and governed access.',
+        icon: 'tabler:search',
+      },
+      {
+        title: '5) Go-live',
+        description:
+          'Cohorts can be generated under governance and delivered securely with reporting and auditability.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  />
+
+  <!-- FAQs -->
+
+  <FAQs
+    title="Contributor FAQs"
+    subtitle="Common questions from hospitals, clinics, and data owners."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Do we lose control of our data?',
+        description:
+          'No. You remain the owner. Access is governed through agreed policies, approvals, and auditable delivery models.',
+      },
+      {
+        title: 'Will contributing disrupt clinical operations?',
+        description:
+          'MedSyntra is designed to minimize operational overhead. We establish ingestion and processing flows that are separate from live clinical workflows.',
+      },
+      {
+        title: 'Is the data de-identified?',
+        description:
+          'Yes. De-identification is designed for research use, including metadata and pixel-level processing where required.',
+      },
+      {
+        title: 'How do we earn revenue?',
+        description:
+          'Contributors participate in monetization under agreed commercial terms. Models can be aligned to cohort usage and scope.',
+      },
+      {
+        title: 'Can data stay in-country?',
+        description:
+          'Yes. Where residency and sovereignty are required, deployment and delivery models are aligned accordingly.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start contributor onboarding',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Request data access',
+        href: '/data-access',
+        icon: 'tabler:database-search',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Make your archive work harder—safely
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Convert imaging archives into governed research assets while retaining ownership, privacy, and sovereignty.
+      MedSyntra handles the heavy lifting.
+    </Fragment>
+  </CallToAction>
+</Layout>
