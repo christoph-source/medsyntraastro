@@ -1,0 +1,180 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Platform | MedSyntra',
+  description: 'Sovereign healthcare data infrastructure for governed research and AI development.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero / Intro -->
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+      Sovereign healthcare data infrastructure
+    </h1>
+
+    <p class="mt-6 max-w-3xl text-lg text-muted-foreground">
+      MedSyntra is a governance-first platform that enables institutions and national frameworks
+      to unlock clinical imaging and healthcare data for research and AI—without compromising
+      privacy, ownership, or sovereignty.
+    </p>
+  </section>
+
+  <!-- Core Platform Capabilities -->
+
+  <Features
+    tagline="Platform capabilities"
+    title="Designed for trust, scale, and compliance"
+    subtitle="A single platform that supports ingestion, de-identification, indexing, and governed access—separate from live clinical operations."
+    items={[
+      {
+        title: 'Multi-source ingestion',
+        description:
+          'Ingest imaging and clinical data from hospital systems using industry-standard protocols such as DICOM and HL7.',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'De-identification by design',
+        description:
+          'Metadata and pixel-level de-identification pipelines designed specifically for research workflows.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Smart indexing & enrichment',
+        description:
+          'Extract structured signals and metadata to enable fast search, filtering, and cohort creation.',
+        icon: 'tabler:binary-tree',
+      },
+      {
+        title: 'Governed access controls',
+        description:
+          'Institutional approvals, audit trails, and policy-based access to support compliant research use.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Secure delivery',
+        description:
+          'Controlled exports and API-based delivery models designed for traceability and accountability.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Sovereign deployment options',
+        description:
+          'Deploy in-country or within required regions to meet national data residency and sovereignty requirements.',
+        icon: 'tabler:building-community',
+      },
+    ]}
+  />
+
+  <!-- How the Platform Fits -->
+
+  <Content
+    isReversed
+    tagline="Deployment model"
+    title="Built for institutions and national frameworks"
+    items={[
+      {
+        title: 'Institution-controlled',
+        description:
+          'Data owners retain control over approvals, policies, and participation in research use cases.',
+      },
+      {
+        title: 'Research-only separation',
+        description:
+          'Designed for non-diagnostic research and innovation, separate from clinical decision-making systems.',
+      },
+      {
+        title: 'Scales across programs',
+        description:
+          'A single deployment can support multiple research initiatives, AI projects, and cohort requests.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581091012184-7c54c1f41c5b?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Healthcare data platform deployment',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        One platform. Many research outcomes.
+      </h3>
+      MedSyntra enables long-term data strategies rather than one-off data exports—supporting
+      sustainable research, AI development, and public health initiatives.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Platform Flow -->
+
+  <Steps
+    title="From ingestion to governed access"
+    items={[
+      {
+        title: 'Ingest',
+        description:
+          'Securely connect to imaging and clinical systems and ingest data into a research pipeline.',
+        icon: 'tabler:database-import',
+      },
+      {
+        title: 'De-identify',
+        description:
+          'Apply privacy controls designed for compliant research use, including pixel-level processing.',
+        icon: 'tabler:mask',
+      },
+      {
+        title: 'Index & enrich',
+        description:
+          'Extract structure and signals to enable fast search and cohort building.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Govern & approve',
+        description:
+          'Apply institutional approvals and access policies before any data is released.',
+        icon: 'tabler:checkup-list',
+      },
+      {
+        title: 'Deliver',
+        description:
+          'Provide controlled access via secure packages or APIs with auditability.',
+        icon: 'tabler:send',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Talk to us about the platform',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Explore data access',
+        href: '/data-access',
+        icon: 'tabler:database-search',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Build once.<br class="block sm:hidden" /> Enable research responsibly.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      MedSyntra helps institutions unlock the value of healthcare data while keeping control,
+      trust, and sovereignty at the center.
+    </Fragment>
+  </CallToAction>
+</Layout>
