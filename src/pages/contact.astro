@@ -1,79 +1,194 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact | MedSyntra',
+  description: 'Contact MedSyntra for platform deployments, governed data access, or contributor onboarding.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <!-- Intro -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Contact</h1>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+    <p class="mt-6 max-w-3xl text-lg text-muted-foreground">
+      Tell us what you’re trying to achieve and we’ll guide you to the right path—platform deployment, data access, or
+      contributor onboarding.
+    </p>
 
-  <!-- Features2 Widget ************** -->
+    <div class="mt-8 grid gap-6 lg:grid-cols-3">
+      <a href="#platform" class="rounded-2xl border p-6 hover:bg-muted transition">
+        <h2 class="font-semibold">Platform</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          Sovereign deployment for institutions and national frameworks.
+        </p>
+      </a>
 
-  <Features2
-    title="We are here to help!"
+      <a href="#data-access" class="rounded-2xl border p-6 hover:bg-muted transition">
+        <h2 class="font-semibold">Data access</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          Request governed access to cohorts and research-ready datasets.
+        </p>
+      </a>
+
+      <a href="#contributors" class="rounded-2xl border p-6 hover:bg-muted transition">
+        <h2 class="font-semibold">Contributors</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          Clinics and hospitals: contribute data and participate in monetization.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact details + guidance -->
+
+  <Content
+    isReversed
+    tagline="Get in touch"
+    title="The fastest way to get started"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: 'Email us',
+        description: 'Send a short message describing which path you want (platform / data access / contributors).',
       },
       {
-        title: 'Contact sales',
+        title: 'Include your constraints',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Data residency requirements, geography, and intended use case help us respond accurately.',
       },
       {
-        title: 'Technical support',
+        title: 'We’ll propose next steps',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'We’ll respond with the minimum info needed to scope the right approach and governance pathway.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Professional collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="rounded-2xl border bg-background p-6">
+        <h3 class="text-xl font-semibold">Email</h3>
+        <p class="mt-2 text-sm text-muted-foreground">
+          <a class="underline" href="mailto:info@medsyntra.com">info@medsyntra.com</a>
+        </p>
+
+        <h3 class="mt-8 text-xl font-semibold">Suggested subject lines</h3>
+        <ul class="mt-2 space-y-2 text-sm text-muted-foreground">
+          <li>• Platform deployment inquiry</li>
+          <li>• Data access / cohort request</li>
+          <li>• Contributor onboarding</li>
+        </ul>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Simple “what to include” sections -->
+
+  <section class="mx-auto max-w-6xl px-6 pb-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div id="platform" class="rounded-2xl border p-6 scroll-mt-24">
+        <h2 class="text-lg font-semibold">Platform</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          If you’re exploring a sovereign deployment, please include:
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Country/region and residency constraints</li>
+          <li>• Intended users (research orgs, universities, ministries, etc.)</li>
+          <li>• Types of data sources (imaging only vs imaging + clinical)</li>
+          <li>• Desired delivery model (managed vs self-operated)</li>
+        </ul>
+      </div>
+
+      <div id="data-access" class="rounded-2xl border p-6 scroll-mt-24">
+        <h2 class="text-lg font-semibold">Data access</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          If you want cohorts or datasets, please include:
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Use case (training, validation, benchmarking, evidence)</li>
+          <li>• Modality and anatomy (CT/MR/X-ray/US etc.)</li>
+          <li>• Inclusion/exclusion criteria</li>
+          <li>• Preferred delivery (secure package vs API)</li>
+        </ul>
+      </div>
+
+      <div id="contributors" class="rounded-2xl border p-6 scroll-mt-24">
+        <h2 class="text-lg font-semibold">Contributors</h2>
+        <p class="mt-2 text-sm text-muted-foreground">
+          If you’re a clinic/hospital wanting to contribute data, please include:
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Modalities and rough archive size</li>
+          <li>• Your primary goals (research impact, monetization, both)</li>
+          <li>• Any specific privacy/regulatory requirements</li>
+          <li>• Whether data must remain in-country</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+
+  <FAQs
+    title="Contact FAQs"
+    subtitle="A few quick answers before you reach out."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Do you provide pricing on the first call?',
+        description:
+          'We can provide ranges quickly, but accurate pricing depends on deployment model, residency constraints, data scope, and delivery requirements.',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        title: 'Do you sell data without governance?',
+        description:
+          'No. MedSyntra is governance-first. Access is aligned to approvals, policies, and responsible research use.',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: 'Can you support national or sovereign deployments?',
+        description:
+          'Yes. Deployment models can be aligned to residency and sovereignty requirements where needed.',
+      },
+      {
+        title: 'What is the best way to start?',
+        description:
+          'Email us with one paragraph describing your goal and which path you want: platform, data access, or contributors.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Email info@medsyntra.com',
+        href: 'mailto:info@medsyntra.com',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
+        text: 'Explore the platform',
+        href: '/platform',
+        icon: 'tabler:layers-subtract',
       },
     ]}
-  />
+  >
+    <Fragment slot="title">Let’s build a governed path to impact</Fragment>
+    <Fragment slot="subtitle">
+      Whether you’re deploying infrastructure, requesting data access, or contributing data—MedSyntra helps you move forward responsibly.
+    </Fragment>
+  </CallToAction>
 </Layout>
