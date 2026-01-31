@@ -1,0 +1,225 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Data Access | MedSyntra',
+  description: 'Governed access to research-ready clinical imaging cohorts and AI-ready datasets.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Intro -->
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Governed data access</h1>
+
+    <p class="mt-6 max-w-3xl text-lg text-muted-foreground">
+      Request research-ready cohorts and datasets under governance-first access models.
+      MedSyntra supports compliant, auditable delivery—so research teams can move faster without compromising trust.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-primary-foreground" href="/contact">
+        Request a cohort
+      </a>
+      <a class="inline-flex items-center justify-center rounded-xl border px-5 py-3" href="/contributors">
+        Become a contributor
+      </a>
+    </div>
+  </section>
+
+  <!-- What you can request -->
+
+  <Features
+    tagline="What you can request"
+    title="Cohorts built for AI training, validation, and research"
+    subtitle="Define your criteria, align on governance, and receive secure access through approved delivery models."
+    items={[
+      {
+        title: 'Cohort definition',
+        description:
+          'Specify modality, anatomy, timeframe, demographics (where allowed), and inclusion/exclusion rules.',
+        icon: 'tabler:filter',
+      },
+      {
+        title: 'Research-ready packaging',
+        description:
+          'Structured exports and documentation that support reproducibility and regulated workflows.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Secure delivery',
+        description:
+          'Controlled delivery via secure packages or API-based access with auditability.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Optional annotation',
+        description:
+          'Where needed, radiologist-led annotation can be arranged for selected cohorts.',
+        icon: 'tabler:pencil',
+      },
+      {
+        title: 'Longitudinal support',
+        description:
+          'Support for follow-up studies and longitudinal research selection (where available and governed).',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Compliance-first approach',
+        description:
+          'Access models designed around governance, approvals, and traceable usage—aligned to responsible research.',
+        icon: 'tabler:clipboard-check',
+      },
+    ]}
+  />
+
+  <!-- How it works -->
+
+  <Steps
+    id="how-it-works"
+    title="How data access works"
+    items={[
+      {
+        title: '1) Describe your use case',
+        description:
+          'Tell us what you’re building or validating and what cohort criteria you need.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: '2) Define criteria and scope',
+        description:
+          'We align on inclusion/exclusion criteria, formats, delivery model, and timeline.',
+        icon: 'tabler:list-details',
+      },
+      {
+        title: '3) Governance & approvals',
+        description:
+          'Access is governed through approvals and agreed policies before any delivery occurs.',
+        icon: 'tabler:checkup-list',
+      },
+      {
+        title: '4) Build and validate the cohort',
+        description:
+          'We generate the cohort from indexed archives and prepare the access package or API permissioning.',
+        icon: 'tabler:database-search',
+      },
+      {
+        title: '5) Deliver securely',
+        description:
+          'You receive controlled access with traceability and clear usage terms.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <!-- Delivery models -->
+
+  <Content
+    id="delivery"
+    isReversed
+    tagline="Delivery models"
+    title="Secure access that fits your workflow"
+    items={[
+      {
+        title: 'Secure dataset packages',
+        description:
+          'Cohorts delivered as controlled exports with clear documentation and agreed usage terms.',
+      },
+      {
+        title: 'API-based access',
+        description:
+          'Access via governed APIs where appropriate—built for traceability and controlled consumption.',
+      },
+      {
+        title: 'Evidence-ready processes',
+        description:
+          'Support workflows that require reproducibility, auditability, and strong governance controls.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Secure data delivery',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Built for governed research access
+      </h3>
+      We’re not a “data dump.” MedSyntra is designed to enable responsible access under governance—so institutions can participate
+      and researchers can trust what they receive.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- FAQs -->
+
+  <FAQs
+    id="use-cases"
+    title="Data access FAQs"
+    subtitle="Practical answers for AI teams, researchers, and regulated workflows."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What kinds of cohorts can you provide?',
+        description:
+          'Cohorts are defined by your criteria (modality, anatomy, timeframe, and other governed fields). Availability depends on contributor sources and approval models.',
+      },
+      {
+        title: 'Can you provide annotations?',
+        description:
+          'Yes, for selected projects we can arrange radiologist-led annotation or structured labeling—subject to scope, governance, and availability.',
+      },
+      {
+        title: 'How is access governed?',
+        description:
+          'Access is governed through agreed policies, approvals, contractual terms, and auditability designed for responsible research use.',
+      },
+      {
+        title: 'Do you support data residency requirements?',
+        description:
+          'Yes. When residency or sovereignty is required, we can align delivery and deployment models accordingly.',
+      },
+      {
+        title: 'How do we get started?',
+        description:
+          'Use the “Request a cohort” contact path with a brief description of your use case and criteria. We’ll respond with next steps and the information needed to proceed.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a cohort',
+        href: '/contact',
+        icon: 'tabler:database-search',
+      },
+      {
+        text: 'Explore the platform',
+        href: '/platform',
+        icon: 'tabler:layers-subtract',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Move faster—without compromising trust
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Tell us what you need: training data, validation cohorts, or regulated evidence packages. We’ll help you define a governed path to access.
+    </Fragment>
+  </CallToAction>
+</Layout>
